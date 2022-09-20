@@ -202,7 +202,7 @@ if(BUILD_SHARED_LIBS AND WIN32)
 endif()
 
 
-set(HEADER_LOCATION "${CMAKE_SOURCE_DIR}/include/OpenColorIO")
+set(HEADER_LOCATION "${CMAKE_CURRENT_SOURCE_DIR}/../../include/OpenColorIO")
 file(GLOB_RECURSE INSTALL_HEADERS "${HEADER_LOCATION}/*.h")
 
 # Some part of the build process expect to find the ABI header here,
