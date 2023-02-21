@@ -25,6 +25,8 @@ target_link_libraries(ociolutimage
 		utils::strings
 )
 
-install(TARGETS ociolutimage
-	RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-)
+if(NOT OCIO_SKIP_INSTALL)
+	install(TARGETS ociolutimage
+		RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+	)
+endif()

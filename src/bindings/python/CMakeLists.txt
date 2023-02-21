@@ -237,6 +237,8 @@ endif()
 # using ccmake.
 set(PYTHON_VARIANT_PATH ${_Python_VARIANT_PATH} CACHE INTERNAL "")
 
-install(TARGETS PyOpenColorIO
-    LIBRARY DESTINATION ${_Python_VARIANT_PATH}
-)
+if(NOT OCIO_SKIP_INSTALL)
+	install(TARGETS PyOpenColorIO
+		LIBRARY DESTINATION ${_Python_VARIANT_PATH}
+	)
+endif()

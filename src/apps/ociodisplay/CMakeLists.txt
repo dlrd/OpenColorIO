@@ -46,6 +46,8 @@ target_link_libraries(ociodisplay
         OpenColorIO
 )
 
-install(TARGETS ociodisplay
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-)
+if(NOT OCIO_SKIP_INSTALL)
+    install(TARGETS ociodisplay
+        RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    )
+endif()

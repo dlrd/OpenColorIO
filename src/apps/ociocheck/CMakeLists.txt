@@ -20,6 +20,8 @@ target_link_libraries(ociocheck
         OpenColorIO
 )
 
-install(TARGETS ociocheck
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-)
+if(NOT OCIO_SKIP_INSTALL)
+    install(TARGETS ociocheck
+        RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    )
+endif()

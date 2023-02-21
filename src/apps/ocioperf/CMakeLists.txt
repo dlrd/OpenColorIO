@@ -17,6 +17,8 @@ target_link_libraries(ocioperf
         utils::strings
 )
 
-install(TARGETS ocioperf
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-)
+if(NOT OCIO_SKIP_INSTALL)
+    install(TARGETS ocioperf
+        RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    )
+endif()

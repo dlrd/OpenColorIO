@@ -21,6 +21,8 @@ target_link_libraries(ociomakeclf
         utils::strings
 )
 
-install(TARGETS ociomakeclf
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-)
+if(NOT OCIO_SKIP_INSTALL)
+    install(TARGETS ociomakeclf
+        RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    )
+endif()

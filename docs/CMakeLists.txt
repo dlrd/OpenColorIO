@@ -164,11 +164,12 @@ if(${Python_VERSION_MAJOR} GREATER_EQUAL 3)
     ###########################################################################
     ### Installation ###
 
-    install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/build-html/
-            DESTINATION ${CMAKE_INSTALL_PREFIX}/share/doc/OpenColorIO/html
-            PATTERN .* EXCLUDE
-    )
-
+    if(NOT OCIO_SKIP_INSTALL)
+        install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/build-html/
+                DESTINATION ${CMAKE_INSTALL_PREFIX}/share/doc/OpenColorIO/html
+                PATTERN .* EXCLUDE
+        )
+    endif()
 else()
     message(Warning "Skipping local documentation generation, requires Python >= 3.x")
 endif()

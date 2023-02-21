@@ -32,6 +32,8 @@ target_link_libraries(ociobakelut
         OpenColorIO
 )
 
-install(TARGETS ociobakelut
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-)
+if(NOT OCIO_SKIP_INSTALL)
+    install(TARGETS ociobakelut
+        RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    )
+endif()
