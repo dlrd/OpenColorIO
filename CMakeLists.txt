@@ -292,7 +292,7 @@ else()
     set(OCIO_SETUP_NAME setup_ocio.sh)
 endif()
 
-configure_file(${CMAKE_SOURCE_DIR}/share/ocio/${OCIO_SETUP_NAME}.in
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/share/ocio/${OCIO_SETUP_NAME}.in
     ${CMAKE_CURRENT_BINARY_DIR}/share/ocio/${OCIO_SETUP_NAME} @ONLY)
 
 if(NOT OCIO_SKIP_INSTALL)
